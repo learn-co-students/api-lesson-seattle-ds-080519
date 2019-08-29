@@ -7,8 +7,8 @@ if response.status_code == 200:
 
     books = response_dict["items"]
 
-    for book in books:
-        info = book["volumeInfo"]
-        print(info["title"])
+    for book_dict in books:
+        info_dict = book_dict["volumeInfo"]
+        print(info_dict["title"])
 else:
     print("Error: unable to retrieve books.  Server responded with status code", response.status_code)
